@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">FitnessHome</string>
+    <string name="giris">Giriş</string>
+    <string name="yenihesapolustur">YENİ HESAP OLUŞTUR</string>
+    <string name="yenihesapol">YENİ HESAP OLUŞTUR</string>
+    <string name="kullaniciadi">Kullanıcı Adı</string>
+    <string name="email">Email</string>
+    <string name="sifre">Şifre</string>
+    <string name="hesapolustur">HESAP OLUŞTUR</string>
+    <string name="ad">Ad</string>
+    <string name="soyad">Soyad</string>
+    <string name="dogumtarihi">Doğum Tarihi</string>
+    <string name="boy">Boy</string>
+    <string name="kilo">Kilo</string>
+    <string name="girisyap">GİRİŞ YAP</string>
+    <string name="fitness_home">FITNESS HOME</string>
+    <string name="hesabim">HESABIM</string>
+    <string name="antrenmanlar">ANTRENMANLAR</string>
+    <string name="harita">HARİTA</string>
+    <string name="hava_durumu">HAVA DURUMU</string>
+    <string name="digerrdbtn">Diğer</string>
+    <string name="cinsiyetrdbtn">Cinsiyet</string>
+    <string name="erkekrdbtn">Erkek</string>
+    <string name="kadinrdbtn">Kadın</string>
+</resources>

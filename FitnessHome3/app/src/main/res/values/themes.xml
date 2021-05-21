@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.FitnessHome" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/fitnesshome</item>
+        <item name="colorPrimaryDark">@color/logokyesil</item>
+        <item name="colorAccent">@color/logosari</item>
+        <!-- Customize your theme here. -->
+    </style>
+</resources>

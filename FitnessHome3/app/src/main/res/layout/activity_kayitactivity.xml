@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".kayitactivity">
+
+    <include
+        android:id="@+id/actionbarRegister"
+        layout="@layout/actionbar_app" />
+
+
+    <EditText
+        android:id="@+id/txtemail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="@string/email"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="" />
+    <EditText
+        android:id="@+id/txtsifre"
+        android:layout_width="match_parent"
+        android:inputType="textPassword"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtemail"
+        android:hint="@string/sifre"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="" />
+    <EditText
+        android:id="@+id/txtad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtsifre"
+        android:layout_marginTop="20dp"
+        android:hint="@string/ad"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="" />
+    <EditText
+        android:id="@+id/txtsoyad"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtad"
+        android:layout_marginTop="20dp"
+        android:hint="@string/soyad"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="" />
+    <EditText
+        android:id="@+id/txtboy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtsoyad"
+        android:layout_marginTop="20dp"
+        android:hint="@string/boy"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="" />
+    <EditText
+        android:id="@+id/txtkilo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtboy"
+        android:layout_marginTop="20dp"
+        android:hint="@string/kilo"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp" />
+    <Button
+        android:id="@+id/btnkayit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hesapolustur"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="35dp"
+        android:background="@color/logosari" />
+
+
+</RelativeLayout>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".anaekranactivity"
+    android:background="@color/silver">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.google.android.material.appbar.AppBarLayout>
+    <include
+        android:id="@+id/actionBar"
+        layout="@layout/actionbar_app" />
+
+
+    <TextView
+        android:id="@+id/txtWelcomeAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fitness_home"
+        android:layout_marginTop="35dp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/logolacivert"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:shadowColor="@color/darksilver"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:layout_below="@+id/hesabimbtn" />
+    <Button
+        android:id="@+id/hesabimbtn"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:text="@string/hesabim"
+        android:textSize="30sp"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="15dp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/butontasarim"
+        android:shadowColor="@color/black"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5" />
+    <Button
+        android:id="@+id/antrnmnbtn"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:text="@string/antrenmanlar"
+        android:textSize="20sp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="200sp"
+        android:layout_marginRight="15sp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/antrnmnbtntsrm"
+        android:shadowColor="@color/black"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        />
+
+    <Button
+        android:id="@+id/havadrmbtn"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:text="@string/hava_durumu"
+        android:textSize="30sp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="36dp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/hvdrmbtntsrm"
+        android:shadowColor="@color/black"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:layout_below="@+id/txtWelcomeAppName"/>
+
+    <Button
+        android:id="@+id/haritabtn"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:text="@string/harita"
+        android:textSize="30sp"
+        android:layout_marginLeft="200sp"
+        android:layout_marginTop="36dp"
+        android:layout_marginRight="15sp"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/hrtbtntsrm"
+        android:shadowColor="@color/black"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowRadius="5"
+        android:layout_below="@+id/txtWelcomeAppName"/>
+
+
+</RelativeLayout>

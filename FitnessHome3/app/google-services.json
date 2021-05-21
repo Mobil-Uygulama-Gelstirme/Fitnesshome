@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "451750351893",
+    "project_id": "fitnesshomee35",
+    "storage_bucket": "fitnesshomee35.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:451750351893:android:622c96cc41097fac5aea1c",
+        "android_client_info": {
+          "package_name": "com.example.fitnesshome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "451750351893-vl9g47vjpeepv9ehdv5t50s7j8kgqbov.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fitnesshome",
+            "certificate_hash": "db8c5b7c392af2e8f37514fa9df2d6545d30a8f0"
+          }
+        },
+        {
+          "client_id": "451750351893-5pen0h232u60suj20da1esh0im2m0pp4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn7KPaSroaMDKUSX4EI-6B15HrgQ0VfWY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "451750351893-5pen0h232u60suj20da1esh0im2m0pp4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

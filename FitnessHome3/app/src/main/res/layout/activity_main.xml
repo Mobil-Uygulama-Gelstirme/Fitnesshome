@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/white"
+    android:padding="20dp"
+    >
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtWelcomeAppName"
+        android:layout_marginTop="-350dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo"
+
+         />
+
+        <TextView
+        android:id="@+id/txtWelcomeAppName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FITNESS HOME"
+        android:textSize="35sp"
+        android:textColor="@color/fitnesshome"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+            android:shadowColor="@color/silver"
+            android:shadowDx="5"
+            android:shadowDy="6"
+            android:shadowRadius="3"
+            android:textStyle="bold"
+        />
+
+        <Button
+        android:id="@+id/btnWelcomeLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:background="@color/silver"
+        android:layout_marginBottom="25dp"
+        android:text="@string/giris"
+        android:layout_above="@+id/btnWelcomeRegister" />
+
+        <Button
+        android:id="@+id/btnWelcomeRegister"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="60dp"
+        android:textStyle="bold"
+        android:background="@color/logosari"
+        android:text="@string/yenihesapolustur" />
+
+
+
+</RelativeLayout>

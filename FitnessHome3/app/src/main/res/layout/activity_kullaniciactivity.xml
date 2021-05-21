@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".kullaniciactivity">
+
+    <include layout="@layout/actionbar_app"
+        android:id="@+id/actionbarkullanici" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profilresim"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_below="@id/actionbarkullanici"
+        android:background="@color/silver"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/kullaniciadi"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Ad"
+        android:padding="10dp"
+        android:textColor="@color/logolacivert"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@id/profilresim"/>
+    <EditText
+        android:id="@+id/kullanicisoyadi"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Soyad"
+        android:padding="10dp"
+        android:textColor="@color/logolacivert"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@id/kullaniciadi"/>
+    <EditText
+        android:id="@+id/kullaniciboy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Boy"
+        android:padding="10dp"
+        android:textColor="@color/logolacivert"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@id/kullanicisoyadi"/>
+    <TextView
+        android:id="@+id/kullanicikg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CM"
+        android:textColor="@color/logolacivert"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="230dp"
+        android:textSize="15sp"
+        android:layout_below="@id/kullanicisoyadi"/>
+    <EditText
+        android:id="@+id/kullanicikilo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Kilo"
+        android:padding="10dp"
+        android:textColor="@color/logolacivert"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@id/kullaniciboy"/>
+    <TextView
+        android:id="@+id/kg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="KG"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="230dp"
+        android:textSize="15sp"
+        android:textColor="@color/logolacivert"
+        android:layout_below="@id/kullaniciboy"/>
+    <Button
+        android:id="@+id/btnayarlar"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:text="Bilgilerimi Güncelle"
+        android:background="@color/logosari"
+        android:layout_marginTop="40dp"
+        android:layout_below="@id/kullanicikilo"
+        android:layout_centerHorizontal="true"
+
+
+        />
+
+
+</RelativeLayout>
