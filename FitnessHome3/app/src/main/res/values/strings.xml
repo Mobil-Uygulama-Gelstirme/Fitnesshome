@@ -22,4 +22,100 @@
     <string name="cinsiyetrdbtn">Cinsiyet</string>
     <string name="erkekrdbtn">Erkek</string>
     <string name="kadinrdbtn">Kadın</string>
+
+
+    <string name="Baslik">Baslik</string>
+    <string name="Aciklama">Aciklama</string>
+
+    /İlk ekranda görünecek Program başlıkları ve açıklamaları
+    <string-array name="Antreman_Programlari">
+        <item>Daily Posture Routine</item>
+        <item>Mobility Routine</item>
+        <item>Core Training for beginners</item>
+    </string-array>
+
+    <string-array name="Aciklama">
+        <item>Vücud duruşunuzu düzeltmek için günlük yapılabilecek antrenman</item>
+        <item>Mobilitenizi düzeltmek ve geliştirmek için</item>
+        <item>Yeni başlayanlar için evde karın antrenmanı</item>
+    </string-array>
+
+
+    // 1.antrenman programının hareketleri ve açıklamaları
+    <string-array name="Posture">
+        <item>Over and Back</item>
+        <item>Cobra Pose</item>
+        <item>Stand and Reach</item>
+        <item>Wall Slides w Chin Nod</item>
+        <item>Quadruped Thoracic Rotations</item>
+        <item>Kneeling Hip Flexor Stretch</item>
+        <item>Pigeon Stretch</item>
+        <item>Glute Bridges</item>
+    </string-array>
+
+    <string-array name="Posture_Aciklama">
+        <item>~10~15 yavaş tekrar</item>
+        <item>~5~10  tekrar ve tepede noktada bekle</item>
+        <item>İki tarafa da 5~10  tekrar ve tepe noktada bekle</item>
+        <item>~10~15 yavaş tekrar x 2set</item>
+        <item>İki tarafa da ~10 tekrar ve tepe noktada bekle</item>
+        <item>İki tarafa da ~30~45 saniye bekle</item>
+        <item>İki tarafa da ~30~45 saniye bekle</item>
+        <item>~10~15  tekrar ve tepe noktada bekle x2 set</item>
+    </string-array>
+
+    // 2.antrenman programının hareketleri ve açıklamaları
+
+    <string-array name="Mobility">
+        <item>Towel Stretch</item>
+        <item>Thoraric Extensions	</item>
+        <item>Cat Cows	</item>
+        <item>90/90 Drill</item>
+        <item>Bench Ankle Mobilization</item>
+        <item>Weighted Goblet Squat </item>
+
+    </string-array>
+
+    <string-array name="Mobility_Aciklama">
+        <item>Her kol içn ~5~10 tekrar</item>
+        <item>~5~10 Tekrar</item>
+        <item>Her iki yöne de 6 tekrar</item>
+        <item>Her yöne ~5~10 Tekrar</item>
+        <item>Her bacak için  ~5~10 Tekrar</item>
+        <item>~30~60 saniye bekle</item>
+
+    </string-array>
+
+    // 3.antrenman programının hareketleri ve açıklamaları
+
+    <string-array name="Core">
+        <item>Leg Raise   </item>
+        <item>Reach Troughs</item>
+        <item>Reverse Crunches</item>
+        <item>Dead bugs </item>
+        <item>Hollow Body</item>
+        <item>Plank </item>
+        <item>Rest</item>
+
+    </string-array>
+
+    <string-array name="Core_Aciklama">
+        <item>kontrollü  ~10~15 tekrar</item>
+        <item>kontrollü  ~10~15 tekrar</item>
+        <item>kontrollü  ~10~15 tekrar</item>
+        <item>her iki tarafınada 10 tekrar</item>
+        <item>~20~30 saniye bekle</item>
+        <item>~20~30 saniye bekle</item>
+        <item>Tüm hareketleri yapdıktan sonra 1dk dinlen</item>
+    </string-array>
+    <string name="title_activity_antrenman_programlari">antrenmanProgramlari_activity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
 </resources>

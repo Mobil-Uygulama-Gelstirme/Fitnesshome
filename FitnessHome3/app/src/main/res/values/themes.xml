@@ -7,4 +7,13 @@
         <item name="colorAccent">@color/logosari</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.FitnessHome.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.FitnessHome.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.FitnessHome.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

@@ -57,13 +57,20 @@ public class anaekranactivity extends AppCompatActivity {
         btnkullanici.setOnClickListener(view -> {
             Intent intentkullanici = new Intent(anaekranactivity.this,kullaniciactivity.class);
             startActivity(intentkullanici);
-            finish();
+        });
+
+        btnantrenman=findViewById(R.id.antrnmnbtn);
+        btnantrenman.setOnClickListener(view -> {
+            Intent intentAnt= new Intent(getBaseContext(),antrenmanProgramlari_activity.class);
+            startActivity(intentAnt);
         });
 
         if (mAuth.getCurrentUser() == null) {
+
+            Toast.makeText(getApplicationContext(), "mAuth.getCurrentUser() == null", Toast.LENGTH_LONG).show();
             Intent girisIntent = new Intent(anaekranactivity.this, girisactivity.class);
             startActivity(girisIntent);
-            Toast.makeText(getApplicationContext(), "Lütfen Giriş Yapınız", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Lütfen Giriş Yapınız", Toast.LENGTH_LONG).show();
             finish();
         }
     }
