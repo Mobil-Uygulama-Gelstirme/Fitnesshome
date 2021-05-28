@@ -9,7 +9,13 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.LocaleList;
+import android.os.Looper;
 import android.os.SystemClock;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -17,6 +23,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -28,8 +37,9 @@ import org.jetbrains.annotations.NotNull;
 public class MapsActivity extends AppCompatActivity {
 
 
-    FusedLocationProviderClient client;//Location bilgisi için gerekli clientimiz.
+
     SupportMapFragment mapFragment;//Haritamızın görüntüleneceği fragment belirleniyor.
+  //  ProgressBar progressBar;
 
 
     @Override
@@ -38,9 +48,8 @@ public class MapsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_maps);
 
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
+     //   progressBar.findViewById(R.id.progressBar);
 
-        //Fused location'ı başlatıyoruz.
-        client = LocationServices.getFusedLocationProviderClient(MapsActivity.this);
 
         LocationManager manager = (LocationManager) getSystemService(MapsActivity.LOCATION_SERVICE);
 
@@ -66,7 +75,10 @@ public class MapsActivity extends AppCompatActivity {
         builder.setMessage("Konumun kapalı görünüyor, aktif etmek ister misin?")
                 .setCancelable(false)
                 .setPositiveButton("Evet", (dialog, id) -> {
+                    LocationManager manager = (LocationManager) getSystemService(MapsActivity.LOCATION_SERVICE);
                     startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));//Konum penceresi açılıyor.
+                    while(!manager.isProviderEnabled(LocationManager.GPS_PROVIDER))//Konum açılasıya kadar bekler. Sonra yeniden başlatır.
+                    {}
                     this.recreate();
                 })
                 .setNegativeButton("Hayır", (dialog, id) -> dialog.cancel());
@@ -94,8 +106,39 @@ public class MapsActivity extends AppCompatActivity {
     @SuppressLint("MissingPermission")
     private void getCurrentLocation() {
         //Initialize task Location
+      //  progressBar.setVisibility(View.VISIBLE);
+        LocationRequest locationRequest= new LocationRequest();
+        locationRequest.setInterval(10000);
+        locationRequest.setFastestInterval(3000);
+        locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
 
-        client.getLastLocation().addOnCompleteListener(task -> {
+        LocationServices.getFusedLocationProviderClient(MapsActivity.this).requestLocationUpdates(locationRequest, new LocationCallback() {
+            @Override
+            public void onLocationResult(@NonNull @NotNull LocationResult locationResult) {
+                super.onLocationResult(locationResult);
+                LocationServices.getFusedLocationProviderClient(MapsActivity.this).removeLocationUpdates(this);
+                Location location = locationResult.getLastLocation();
+                mapFragment.getMapAsync(googleMap -> {
+                    //Add My Location Button
+                    googleMap.setMyLocationEnabled(true);
+
+                    googleMap.getUiSettings().setMyLocationButtonEnabled(true);
+                    //Initialize Lat Lng
+                    LatLng latLng = new LatLng(location.getLatitude(),location.getLongitude());
+                    //Create Marker Options
+
+                    //zoom Map
+                    googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,15));
+
+                    //Add Marker On Location
+
+                    getNearByParks(googleMap,location);
+             //       progressBar.setVisibility(View.GONE);
+                });
+            }
+        }, Looper.getMainLooper());
+
+        /*client.getLastLocation().addOnCompleteListener(task -> {
             Location location= task.getResult();
             //Syc Map
             mapFragment.getMapAsync(googleMap -> {
@@ -118,7 +161,7 @@ public class MapsActivity extends AppCompatActivity {
                 getNearByParks(googleMap,location);
 
             });
-        });
+        });*/
     }
 
     @Override
@@ -129,6 +172,10 @@ public class MapsActivity extends AppCompatActivity {
                 //When permission grated
                 //Call method
                 getCurrentLocation();
+            }
+            else
+            {
+                Toast.makeText(this,"Konum izni reddedildi!",Toast.LENGTH_LONG).show();
             }
         }
     }
