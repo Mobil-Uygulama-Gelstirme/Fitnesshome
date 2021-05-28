@@ -21,6 +21,8 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -29,16 +31,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageMetadata;
 import com.google.firebase.storage.StorageReference;
-import com.google.firebase.storage.UploadTask;
+
 import com.theartofdev.edmodo.cropper.CropImage;
 import com.theartofdev.edmodo.cropper.CropImageView;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -72,6 +72,7 @@ public class kullaniciactivity extends AppCompatActivity {
         kkilo =(EditText) findViewById(R.id.kullanicikilo);
         kresim=(CircleImageView) findViewById(R.id.profilresim);
 
+
         kullaniciprogress= new ProgressDialog(this);
         mAuth=FirebaseAuth.getInstance();
         storageReference= FirebaseStorage.getInstance().getReference();
@@ -85,13 +86,12 @@ public class kullaniciactivity extends AppCompatActivity {
                 String user_soyad=snapshot.child("Soyadi").getValue().toString();
                 String user_boy=snapshot.child("Boy").getValue().toString();
                 String user_kilo=snapshot.child("Kilo").getValue().toString();
-                String user_resim=snapshot.child("Fotograf").getValue().toString();
-                imageuri=Uri.parse(user_resim);
+                //String user_resim=snapshot.child("Fotograf").getValue().toString();
+                //imageuri=Uri.parse(user_resim);
 
-                RequestOptions requestOptions = new RequestOptions();
-                requestOptions.placeholder(R.drawable.hesapsimge);
 
-                Glide.with(kullaniciactivity.this).setDefaultRequestOptions(requestOptions).load(imageuri).into(kresim);
+
+                //Glide.with(kullaniciactivity.this).setDefaultRequestOptions(requestOptions).load(imageuri).into(kresim);
 
                 kad.setText(user_ad);
                 ksoyad.setText(user_soyad);
@@ -105,6 +105,9 @@ public class kullaniciactivity extends AppCompatActivity {
 
             }
         });
+
+
+        loadImage(user_id);
 
         kresim.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -180,5 +183,20 @@ public class kullaniciactivity extends AppCompatActivity {
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private void loadImage(String user_id){ //Fotoğrafı getirir
+        RequestOptions requestOptions = new RequestOptions();
+        requestOptions.placeholder(R.drawable.hesapsimge);
+        StorageReference ref = storageReference.child(user_id+".jpg");
+
+        final long ONE_MEGABYTE = 1024 * 1024;
+        ref.getBytes(ONE_MEGABYTE).addOnSuccessListener(bytes -> {
+            // Data for "images/user_id.jpg" is returns, use this as needed
+            Glide.with(kullaniciactivity.this).setDefaultRequestOptions(requestOptions).load(bytes).into(kresim);
+        }).addOnFailureListener(exception -> {
+            // Handle any errors
+            Glide.with(kullaniciactivity.this).setDefaultRequestOptions(requestOptions);
+        });
     }
 }

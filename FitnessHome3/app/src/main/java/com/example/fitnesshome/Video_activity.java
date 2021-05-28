@@ -5,13 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.widget.MediaController;
-import android.widget.TextView;
 import android.widget.VideoView;
 
 public class Video_activity extends AppCompatActivity {
 
     String video_path;
-    TextView  textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,12 +64,12 @@ public class Video_activity extends AppCompatActivity {
             case "Bench Ankle Mobilization":
                 video_path = "android.resource://" + getPackageName() +"/"+R.raw.mobilityvideo5;
                 break;
-            case "Weighted Goblet Squat":
+            case "Weighted Goblet Squat ":
                 video_path = "android.resource://" + getPackageName() +"/"+R.raw.mobilityvideo6;
                 break;
 
 
-            case "Leg Raise":
+            case "Leg Raise   ":
                 video_path = "android.resource://" + getPackageName() +"/"+R.raw.corevideo1;
                 break;
             case "Reach Troughs":
@@ -80,16 +78,16 @@ public class Video_activity extends AppCompatActivity {
             case "Reverse Crunches":
                 video_path = "android.resource://" + getPackageName() +"/"+R.raw.corevideo3;
                 break;
-            case "Dead bugs":
+            case "Dead bugs ":
                 video_path = "android.resource://" + getPackageName() +"/"+R.raw.corevideo4;
                 break;
             case "Hollow Body":
                 video_path = "android.resource://" + getPackageName() +"/"+R.raw.corevideo5;
                 break;
-            case "Plank":
+            case "Plank ":
                 video_path = "android.resource://" + getPackageName() +"/"+R.raw.corevideo6;
                 break;
-            case "Rest":
+            case "Rest ":
                 video_path = "android.resource://" + getPackageName() +"/"+R.raw.corevideo7;
                 break;
 
@@ -106,9 +104,6 @@ public class Video_activity extends AppCompatActivity {
         video_player.setMediaController(mediaController);
         mediaController.setAnchorView(video_player);
 
-
-        textView=findViewById(R.id.textView);
-        textView.setText(move_name);
 
 
 

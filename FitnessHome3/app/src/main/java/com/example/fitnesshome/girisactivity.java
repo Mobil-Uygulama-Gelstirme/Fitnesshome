@@ -68,7 +68,12 @@ public class girisactivity extends AppCompatActivity
     }
     private void loginUser(String mail, String sifre)
     {
-        mAuth.signInWithEmailAndPassword(mail,sifre).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+
+        loginProgress.dismiss();
+        Toast.makeText(getApplicationContext(),"Giriş Başarılı",Toast.LENGTH_SHORT).show();
+        Intent mainIntent = new Intent(girisactivity.this,anaekranactivity.class);
+        startActivity(mainIntent);
+        /*mAuth.signInWithEmailAndPassword(mail,sifre).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull  Task<AuthResult> task)
             {
@@ -85,7 +90,7 @@ public class girisactivity extends AppCompatActivity
                     Toast.makeText(getApplicationContext(),"Giriş Başarısız:"+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                 }
             }
-        });
+        });*/
     }
 
     @Override

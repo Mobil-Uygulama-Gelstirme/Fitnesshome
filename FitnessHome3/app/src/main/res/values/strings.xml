@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">FitnessHome</string>
     <string name="giris">Giriş</string>
     <string name="yenihesapolustur">YENİ HESAP OLUŞTUR</string>
@@ -16,14 +16,27 @@
     <string name="fitness_home">FITNESS HOME</string>
     <string name="hesabim">HESABIM</string>
     <string name="antrenmanlar">ANTRENMANLAR</string>
+    <string name="bodyMassIndeksButtonLabel">VÜCUT KİTLE İNDEKSİM</string>
     <string name="harita">HARİTA</string>
     <string name="hava_durumu">HAVA DURUMU</string>
     <string name="digerrdbtn">Diğer</string>
     <string name="cinsiyetrdbtn">Cinsiyet</string>
     <string name="erkekrdbtn">Erkek</string>
     <string name="kadinrdbtn">Kadın</string>
+    <string name="hesapla">HESAPLA</string>
+    <string name="boy_cm">Boy (cm)</string>
+    <string name="kilo_kg">Kilo (kg)</string>
 
+    <string name="faz1_bmi">Zayıf</string>
+    <string name="faz2_bmi">Normal Kilolu</string>
+    <string name="faz3_bmi">Fazla Kilolu</string>
+    <string name="faz4_bmi">Obez</string>
+    <string name="faz5_bmi">İleri Derece Obez(Morbid Obez)</string>
 
+    <string name="label_user_bmi">Vücut Kitle İndeksiniz</string>
+    <string name="label_user_calc_bmi">Vücut Kitle İndeksi Hesaplama</string>
+    <string name="bmi_who_classification">18, 5 kg/m.\'nin altında olanlar: Zayıf \n18.5 – 24, 9 kg/m. arasında olanlar: Normal kilolu\n25 – 29, 9 kg/m. arasında olanlar: Fazla kilolu\n30 – 39, 9 kg/m. arasında olanlar: Obez\n40 kg/m.\'nin üzerinde olanlar: İleri derecede obez (morbid obez) </string>
+    
     <string name="Baslik">Baslik</string>
     <string name="Aciklama">Aciklama</string>
 
@@ -117,5 +130,9 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="todo">TODO</string>
+
+    <string name="title_activity_maps">Map</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBrezll8Zf9O3rCE-_KKuUVqrWODKVGnoA</string>
 
 </resources>

@@ -17,4 +17,6 @@
     <color name="logokyesil">#275523</color>
     <color name="logokirmizi">#BC1E1E</color>
     <color name="logolacivert">#1E1C4D</color>
+    <color name="gray">#BBBBC9</color>
+    <color name="colorLightPeach">#FFF1E1</color>
 </resources>

@@ -16,4 +16,18 @@
     <style name="Theme.FitnessHome.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.FitnessHome.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="TextViewBMIStyle" parent="@android:style/TextAppearance.DeviceDefault.Small">
+        <item name="android:textSize">@dimen/text_size20</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextViewBMIDescStyle" parent="@android:style/TextAppearance.DeviceDefault.Small">
+        <item name="android:textSize">@dimen/text_size18</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/darksilver</item>
+    </style>
 </resources>

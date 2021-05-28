@@ -12,14 +12,13 @@ import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Objects;
 
 
 public class anaekranactivity extends AppCompatActivity {
 
-    private Button btnkullanici,btnantrenman,btnhavadurumu,btnharita;
+    private Button btnkullanici,btnantrenman,btnhavadurumu,btnharita,bodyMassBtn;
     private FirebaseAuth mAuth;
     private Toolbar actionbar;
 
@@ -63,6 +62,18 @@ public class anaekranactivity extends AppCompatActivity {
         btnantrenman.setOnClickListener(view -> {
             Intent intentAnt= new Intent(getBaseContext(),antrenmanProgramlari_activity.class);
             startActivity(intentAnt);
+        });
+
+        bodyMassBtn=findViewById(R.id.bodyMassBtn);
+        bodyMassBtn.setOnClickListener(view ->{
+            Intent intentAnt= new Intent(getBaseContext(), BodyMaskIndexActivity.class);
+            startActivity(intentAnt);
+        });
+
+        btnharita=findViewById(R.id.haritabtn);
+        btnharita.setOnClickListener(view -> {
+            Intent intentHarita= new Intent(getBaseContext(),MapsActivity.class);
+            startActivity(intentHarita);
         });
 
         if (mAuth.getCurrentUser() == null) {
