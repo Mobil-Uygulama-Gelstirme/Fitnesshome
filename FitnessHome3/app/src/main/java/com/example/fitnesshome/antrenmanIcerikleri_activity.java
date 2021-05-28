@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class antrenmanIcerikleri_activity extends AppCompatActivity {
 
@@ -20,6 +21,7 @@ public class antrenmanIcerikleri_activity extends AppCompatActivity {
     String[] mobility_aciklamalari;
     String[] core_hareketleri;
     String[] core_aciklamalari;
+    TextView textView;
 
     int[] posture_images = {R.drawable.posturehareket1,R.drawable.posturehareket2,R.drawable.posturehareket3,
             R.drawable.posturehareket4, R.drawable.posturehareket5,R.drawable.posturehareket6,
@@ -59,5 +61,7 @@ public class antrenmanIcerikleri_activity extends AppCompatActivity {
         recyclerView2.setAdapter(myAdapter2);
         recyclerView2.setLayoutManager(new LinearLayoutManager(this));
 
+        textView=findViewById(R.id.textView);
+        textView.setText(programAdi);
     }
 }

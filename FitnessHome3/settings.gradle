@@ -1,3 +1,2 @@
-include ':mapApp'
 rootProject.name = "FitnessHome"
 include ':app'
