@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/silver">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".BodyMaskIndexActivity">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/labelBmi"
+            style="@style/TextViewBMIDescStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/size5"
+            android:text="@string/label_user_bmi"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <LinearLayout
+            android:id="@+id/linearBmi"
+            android:layout_width="@dimen/bmi_layout_width"
+            android:layout_height="@dimen/bmi_layout_height"
+            android:layout_margin="@dimen/size10"
+            android:layout_marginEnd="41dp"
+            android:background="@drawable/background_body_mask_layout"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelBmi">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="@dimen/size10"
+                android:contentDescription="@string/todo"
+                app:srcCompat="@drawable/img_bmi" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtBmi"
+                style="@style/TextViewBMIStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="@dimen/size2"
+                android:text="VKİ : -"
+                tools:text="Title" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtBmiDesc"
+                style="@style/TextViewBMIDescStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="@dimen/size2"
+                android:text="  -  "
+                android:textAlignment="center"
+                tools:text="Link" />
+        </LinearLayout>
+        <TextView
+            android:id="@+id/txtInfo"
+            android:layout_width="@dimen/bmi_layout_width"
+            android:layout_height="wrap_content"
+            android:text="@string/bmi_who_classification"
+            android:textColor="@color/colorLightPeach"
+            android:layout_margin="@dimen/size10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearBmi"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/labelCalcBmi"
+            style="@style/TextViewBMIDescStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/size5"
+            android:text="@string/label_user_calc_bmi"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtInfo"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/size10"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/labelCalcBmi">
+
+            <EditText
+                android:id="@+id/edtBoy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/background_edittext"
+                android:hint="@string/boy_cm"
+                android:inputType="numberDecimal"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/edtKilo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/background_edittext"
+                android:hint="@string/kilo_kg"
+                android:inputType="numberDecimal"
+                android:padding="10dp" />
+
+            <Button
+                android:id="@+id/btnCalculate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_button"
+                android:text="@string/hesapla"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/txtCalcBmi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorLightPeach"
+                android:layout_margin="@dimen/size10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearBmi"/>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
