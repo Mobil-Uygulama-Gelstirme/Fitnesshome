@@ -2,27 +2,22 @@ package com.example.fitnesshome;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.app.Activity;
-import android.app.ActivityManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.LocaleList;
 import android.os.Looper;
-import android.os.SystemClock;
 import android.view.View;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 
-import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
@@ -39,7 +34,7 @@ public class MapsActivity extends AppCompatActivity {
 
 
     SupportMapFragment mapFragment;//Haritamızın görüntüleneceği fragment belirleniyor.
-  //  ProgressBar progressBar;
+    CardView cardView;
 
 
     @Override
@@ -48,8 +43,7 @@ public class MapsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_maps);
 
         mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-     //   progressBar.findViewById(R.id.progressBar);
-
+        cardView=findViewById(R.id.cardView);
 
         LocationManager manager = (LocationManager) getSystemService(MapsActivity.LOCATION_SERVICE);
 
@@ -105,8 +99,8 @@ public class MapsActivity extends AppCompatActivity {
 
     @SuppressLint("MissingPermission")
     private void getCurrentLocation() {
-        //Initialize task Location
-      //  progressBar.setVisibility(View.VISIBLE);
+        cardView.setVisibility(View.VISIBLE);//Progress Bar gösteriliyor.
+
         LocationRequest locationRequest= new LocationRequest();
         locationRequest.setInterval(10000);
         locationRequest.setFastestInterval(3000);
@@ -119,49 +113,20 @@ public class MapsActivity extends AppCompatActivity {
                 LocationServices.getFusedLocationProviderClient(MapsActivity.this).removeLocationUpdates(this);
                 Location location = locationResult.getLastLocation();
                 mapFragment.getMapAsync(googleMap -> {
-                    //Add My Location Button
+                    //Lokasyon gösteriliyor.
                     googleMap.setMyLocationEnabled(true);
-
+                    //Lokasyonum butonu ekleniyor.
                     googleMap.getUiSettings().setMyLocationButtonEnabled(true);
-                    //Initialize Lat Lng
+                    //Lat Lng belirleniyor.
                     LatLng latLng = new LatLng(location.getLatitude(),location.getLongitude());
-                    //Create Marker Options
 
                     //zoom Map
                     googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,15));
-
-                    //Add Marker On Location
-
+                    //Çevredeki parklar gösteriliyor.
                     getNearByParks(googleMap,location);
-             //       progressBar.setVisibility(View.GONE);
+                    cardView.setVisibility(View.GONE);//Progress bar sonlanıyor.
                 });
-            }
-        }, Looper.getMainLooper());
-
-        /*client.getLastLocation().addOnCompleteListener(task -> {
-            Location location= task.getResult();
-            //Syc Map
-            mapFragment.getMapAsync(googleMap -> {
-                //Add My Location Button
-                googleMap.setMyLocationEnabled(true);
-
-
-
-
-                googleMap.getUiSettings().setMyLocationButtonEnabled(true);
-                //Initialize Lat Lng
-                LatLng latLng = new LatLng(location.getLatitude(),location.getLongitude());
-                //Create Marker Options
-
-                //zoom Map
-                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,15));
-
-                //Add Marker On Location
-
-                getNearByParks(googleMap,location);
-
-            });
-        });*/
+            }}, Looper.getMainLooper());
     }
 
     @Override
@@ -169,8 +134,7 @@ public class MapsActivity extends AppCompatActivity {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 44) {
             if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                //When permission grated
-                //Call method
+                //İzin sağlandığında metod çağrılıyor
                 getCurrentLocation();
             }
             else

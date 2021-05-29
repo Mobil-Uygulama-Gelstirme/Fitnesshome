@@ -3,6 +3,8 @@ package com.example.fitnesshome;
 import android.os.AsyncTask;
 
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -16,7 +18,6 @@ public class GetNearbyParksData extends AsyncTask<Object,String,String> {
     String googleParksData;
     GoogleMap googleMap;
     String url;
-
 
     @Override
     protected String doInBackground(Object... objects) {
@@ -52,8 +53,9 @@ public class GetNearbyParksData extends AsyncTask<Object,String,String> {
                 MarkerOptions markerOptions= new MarkerOptions();
                 markerOptions.title(name);
                 markerOptions.position(latLng);
+                markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.park_marker));
 
-                googleMap.addMarker(markerOptions);
+                googleMap.addMarker(markerOptions);//Marker ekliyoruz.
 
             }
 
@@ -61,6 +63,5 @@ public class GetNearbyParksData extends AsyncTask<Object,String,String> {
             e.printStackTrace();
 
         }
-
     }
 }
