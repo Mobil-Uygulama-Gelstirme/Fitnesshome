@@ -76,6 +76,12 @@ public class anaekranactivity extends AppCompatActivity {
             startActivity(intentHarita);
         });
 
+        btnhavadurumu=findViewById(R.id.havadrmbtn);
+        btnhavadurumu.setOnClickListener(view -> {
+            Intent intentHavaDurumu= new Intent(getBaseContext(),HavaDurumuActivity.class);
+            startActivity(intentHavaDurumu);
+        });
+
         if (mAuth.getCurrentUser() == null) {
 
             Toast.makeText(getApplicationContext(), "mAuth.getCurrentUser() == null", Toast.LENGTH_LONG).show();
