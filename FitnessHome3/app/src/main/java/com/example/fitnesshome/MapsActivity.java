@@ -83,7 +83,7 @@ public class MapsActivity extends AppCompatActivity {
     
     public void getNearByParks(GoogleMap googleMap, @NotNull Location location) {
 
-        String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?" + "location=" + location.getLatitude() + "," + location.getLongitude() +
+        String url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?" + "location=" + location.getLatitude() + "," + location.getLongitude() +//Lokasyon bilgilerini giriyoruz.
                 "&radius=1000" +//Gösterilecek mesafeyi belirliyoruz.
                 "&type=park" +//park tipindeki yerlerin konum bilgilerini alıyoruz.
                 "&key=" + getResources().getString(R.string.google_maps_key);//Servisimize billing hesaptan bir api key ile bağlanıyoruz.

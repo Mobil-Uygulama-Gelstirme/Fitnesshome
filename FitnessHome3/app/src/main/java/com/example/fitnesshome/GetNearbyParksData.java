@@ -26,7 +26,7 @@ public class GetNearbyParksData extends AsyncTask<Object,String,String> {
 
         com.example.fitnesshome.DownloadUrl downloadUrl= new com.example.fitnesshome.DownloadUrl();
         try {
-            googleParksData=downloadUrl.readUrl(url);
+            googleParksData=downloadUrl.readUrl(url);//Servisten okuma işlemi
         } catch (IOException e){
             e.printStackTrace();
         }
@@ -34,7 +34,7 @@ public class GetNearbyParksData extends AsyncTask<Object,String,String> {
     }
 
     @Override
-    protected void onPostExecute(String s) {
+    protected void onPostExecute(String s) {//Task bitiminde UI thread'de yapılmasını istediğimiz şeyleri onPostExecute metodunu kullanıyoruz.
         try {
             JSONObject parentObject= new JSONObject(s);
             JSONArray resultArray=parentObject.getJSONArray("results");
@@ -43,19 +43,19 @@ public class GetNearbyParksData extends AsyncTask<Object,String,String> {
                 JSONObject jsonObject= resultArray.getJSONObject(i);
                 JSONObject locationObj= jsonObject.getJSONObject("geometry").getJSONObject("location");
 
-                String latitude = locationObj.getString("lat");
+                String latitude = locationObj.getString("lat");//Lokasyon bilgileri
                 String longitude = locationObj.getString("lng");
                 JSONObject nameObject= resultArray.getJSONObject(i);
                 String name = nameObject.getString("name");
 
                 LatLng latLng = new LatLng(Double.parseDouble(latitude),Double.parseDouble(longitude));
 
-                MarkerOptions markerOptions= new MarkerOptions();
+                MarkerOptions markerOptions= new MarkerOptions();//Marker ekleme
                 markerOptions.title(name);
                 markerOptions.position(latLng);
                 markerOptions.icon(BitmapDescriptorFactory.fromResource(R.drawable.park_marker));
 
-                googleMap.addMarker(markerOptions);//Marker ekliyoruz.
+                googleMap.addMarker(markerOptions);
 
             }
 
